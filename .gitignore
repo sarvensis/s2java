@@ -1,0 +1,4 @@
+*.pptx
+.idea
+target
+src/test
