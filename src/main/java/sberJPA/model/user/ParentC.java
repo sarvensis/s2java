@@ -12,7 +12,7 @@ import java.util.List;
 @Table(name = "parent_c")
 @NamedQuery(name = "ParentC.getAll", query = "SELECT a from ParentC a")
 @PrimaryKeyJoinColumn(name = "id")
-public class ParentC extends User {
+public class ParentC extends People {
     @OneToOne
     @JoinColumn(name = "id_address")
     private Address address;

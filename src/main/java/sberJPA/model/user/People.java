@@ -1,7 +1,6 @@
 package sberJPA.model.user;
 
 import sberJPA.model.MainModel;
-import sberJPA.model.other.Institution;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -9,7 +8,7 @@ import java.util.Objects;
 
 @MappedSuperclass
 @Inheritance(strategy = InheritanceType.JOINED)
-public class User implements Serializable, MainModel {
+public class People implements Serializable, MainModel {
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -59,8 +58,8 @@ public class User implements Serializable, MainModel {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof User)) return false;
-        User user = (User) o;
+        if (!(o instanceof People)) return false;
+        People user = (People) o;
         return id.equals(user.id);
     }
 

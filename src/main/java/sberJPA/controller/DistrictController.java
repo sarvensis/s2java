@@ -1,8 +1,11 @@
 package sberJPA.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import sberJPA.model.other.District;
 import sberJPA.service.MainService;
+import sberJPA.service.other.DistrictServiceImpl;
 import sberJPA.util.reader.ReaderFactory;
 import sberJPA.util.reader.exeption.IncompleteOperationException;
 
@@ -40,6 +43,12 @@ public class DistrictController extends MainController<District> {
             currT.addAddress(ControllerFactory.getAddressController().getFromList());
         }
         return currT;
+    }
+
+    @GetMapping("/districts")
+    public String districtsList(Model model) {
+        model.addAttribute("allDistricts", DistrictServiceImpl.allDistricts());
+        return "admin";
     }
 
 }

@@ -12,7 +12,7 @@ import java.util.List;
 @Table(name = "child_c")
 @NamedQuery(name = "ChildC.getAll", query = "SELECT a from ChildC a")
 @PrimaryKeyJoinColumn(name = "id")
-public class ChildC extends User {
+public class ChildC extends People {
     @LazyCollection(LazyCollectionOption.FALSE)
     @ManyToMany(
             cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DETACH, CascadeType.REFRESH})
